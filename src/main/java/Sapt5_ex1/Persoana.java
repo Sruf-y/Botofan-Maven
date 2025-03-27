@@ -1,6 +1,8 @@
-package Sapt5;
+package Sapt5_ex1;
 
-public class Persoana {
+import java.io.Serializable;
+
+public class Persoana implements Serializable {
     private String nume;
     private int age;
 
@@ -30,7 +32,7 @@ public class Persoana {
 
     @Override
     public String toString() {
-        return nume+age;
+        return nume+" "+age;
     }
 
 }
