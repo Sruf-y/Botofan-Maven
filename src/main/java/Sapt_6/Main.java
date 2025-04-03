@@ -12,7 +12,7 @@ public class Main {
         List<Angajat> lista_angajati=new ArrayList<>();
 
         System.out.println("Ex 1:");
-        lista_angajati.add(new Angajat("Andrei Botofan",4400F,"Programator", LocalDate.now().minusMonths(50)));
+        lista_angajati.add(new Angajat("Andrei Botofan",2800F,"Programator", LocalDate.now().minusMonths(50)));
         lista_angajati.add(new Angajat("Alex Matei",4700F,"Programator Junior", LocalDate.now().minusMonths(2)));
         lista_angajati
                 .stream()
@@ -69,7 +69,36 @@ public class Main {
         lista_noua
                 .stream()
                 .forEach(System.out::println);
-        
+
+
+
+
+
+        System.out.println("\nEx 6:");
+
+
+
+        lista_angajati.stream()
+                .filter(p->p.getSalariu()<3000)
+                .map(p->p.getSalariu())
+                .forEach(System.out::println);
+
+
+
+        System.out.println("\nEx 7:");
+
+
+
+        //lista_angajati.clear();
+
+        lista_angajati.stream()
+                .min((a,b)->a.getData_angajarii().compareTo(b.getData_angajarii()))
+                .ifPresentOrElse(System.out::println, new Runnable() {
+                    @Override
+                    public void run() {
+                        System.out.println("No elements present");
+                    }
+                });
         
 
 
