@@ -1,1 +1,10 @@
-[{"nume":"Andrei","age":21},{"nume":"Alex","age":13}]
+[
+  {
+    "nume" : "Vlad",
+    "age" : 20
+  },
+  {
+    "nume" : "Oana",
+    "age" : 23
+  }
+]

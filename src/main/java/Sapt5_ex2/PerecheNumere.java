@@ -45,6 +45,12 @@ public class PerecheNumere {
 
         File file = new File("src/main/resources/" + filename + ".json");
 
+        try{
+            file.createNewFile();
+
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
 
         try {
             ObjectMapper mapper = new ObjectMapper();
@@ -52,7 +58,6 @@ public class PerecheNumere {
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-
 
     }
 

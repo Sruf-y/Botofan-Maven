@@ -4,35 +4,20 @@ import java.io.Serializable;
 
 public class Persoana implements Serializable {
     private String nume;
-    private int age;
+    private int varsta;
 
-    public String getNume() {
-        return nume;
-    }
 
-    public void setNume(String nume) {
-        this.nume = nume;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public Persoana(String nume, int age) {
+    public Persoana(String nume, int varsta) {
         super();
         this.nume = nume;
-        this.age = age;
+        this.varsta = varsta;
     }
 
     public Persoana() {}
 
     @Override
     public String toString() {
-        return nume+" "+age;
+        return nume+" "+ varsta;
     }
 
 }

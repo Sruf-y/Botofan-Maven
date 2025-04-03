@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-
 public class Main {
     public static void main(String[] args){
 
@@ -15,22 +14,16 @@ public class Main {
             System.out.println(pers.toString());
         }
 
-        //lista.add(new Persoana("Alex",13));
         Scriere(lista);
 
     }
-
-
-
-
-
 
     public static void Scriere(ArrayList<Persoana> lista){
 
         try{
             ObjectMapper mapper = new ObjectMapper();
-            File fila = new File("src/main/resources/persoane.json");
-            mapper.writeValue(fila,lista);
+            File fisier = new File("src/main/resources/persoane.json");
+            mapper.writeValue(fisier,lista);
         }
         catch (Exception ex){
             System.out.println(ex.getMessage());
@@ -44,8 +37,8 @@ public class Main {
         if(new File("src/main/resources/persoane.json").exists()) {
             try {
                 ObjectMapper mapper = new ObjectMapper();
-                File fila = new File("src/main/resources/persoane.json");
-                lista = mapper.readValue(fila, new TypeReference<>() {
+                File fisier = new File("src/main/resources/persoane.json");
+                lista = mapper.readValue(fisier, new TypeReference<>() {
                 });
             } catch (Exception ex) {
                 System.out.println(ex.getMessage());
