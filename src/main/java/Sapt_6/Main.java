@@ -99,7 +99,13 @@ public class Main {
                         System.out.println("No elements present");
                     }
                 });
-        
+
+
+
+        System.out.println("\nEx 8:");
+
+        // nu stiu
+
 
 
 
