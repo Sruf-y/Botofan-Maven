@@ -1,9 +1,11 @@
 package Sapt_6;
 
 import java.time.LocalDate;
+import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -104,9 +106,53 @@ public class Main {
 
         System.out.println("\nEx 8:");
 
-        // nu stiu
+
+        System.out.println("Minim: "+ lista_angajati.stream()
+                .collect(Collectors.summarizingDouble(Angajat::getSalariu))
+                .getMin());
 
 
+        System.out.println("Average: "+lista_angajati.stream()
+                .collect(Collectors.summarizingDouble(Angajat::getSalariu))
+                .getAverage());
+
+        System.out.println("Maxim: "+ lista_angajati.stream()
+                .collect(Collectors.summarizingDouble(Angajat::getSalariu))
+                .getMax());
+
+
+
+
+
+        System.out.println("\nEx 9:");
+
+
+        lista_angajati.stream()
+                .filter(p->p.getNume().toLowerCase().contains("ion"))
+                .findAny()
+                .ifPresentOrElse(new Consumer<Angajat>() {
+                    @Override
+                    public void accept(Angajat angajat) {
+                        System.out.println("Firma are cel puțin un Ion angajat");
+                    }
+                }, new Runnable() {
+                    @Override
+                    public void run() {
+                        System.out.println("Firma nu are nici un Ion angajat");
+                    }
+                });
+
+
+
+        System.out.println("\nEx 10:");
+
+
+        System.out.println("Nr angajati din vara anului precedent: "+lista_angajati.stream()
+                .filter(p->p.getData_angajarii().isAfter(
+                        LocalDate.of(LocalDate.now().getYear(), Month.JUNE,1))
+                        &&
+                        p.getData_angajarii().isBefore(LocalDate.of(LocalDate.now().getYear(), Month.AUGUST,31)))
+                .count());
 
 
     }
