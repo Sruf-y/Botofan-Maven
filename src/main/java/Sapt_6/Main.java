@@ -126,19 +126,20 @@ public class Main {
 
         System.out.println("\nEx 9:");
 
+        String cautat = "Ion";
 
         lista_angajati.stream()
-                .filter(p->p.getNume().toLowerCase().contains("ion"))
+                .filter(p->p.getNume().toLowerCase().contains(cautat.toLowerCase()))
                 .findAny()
                 .ifPresentOrElse(new Consumer<Angajat>() {
                     @Override
                     public void accept(Angajat angajat) {
-                        System.out.println("Firma are cel puțin un Ion angajat");
+                        System.out.println("Firma are cel puțin un "+cautat+" angajat");
                     }
                 }, new Runnable() {
                     @Override
                     public void run() {
-                        System.out.println("Firma nu are nici un Ion angajat");
+                        System.out.println("Firma nu are nici un "+cautat+" angajat");
                     }
                 });
 
