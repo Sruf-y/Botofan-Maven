@@ -156,5 +156,14 @@ public class Main {
                 .count());
 
 
+
+        // exemplu cu clasa record (lika a kotlin data class)
+
+        myStandardClass auxiliar = new myStandardClass("Andrei");
+
+
+        System.out.println("\n\n"+auxiliar.nume());
+        System.out.println(auxiliar.functionMy());
+
     }
 }

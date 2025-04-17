@@ -3,6 +3,7 @@ package Sapt_6;
 import java.time.LocalDate;
 import java.util.Objects;
 
+
 public class Angajat {
     private String nume="Default";
     private String post="Default";
