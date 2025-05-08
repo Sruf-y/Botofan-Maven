@@ -75,7 +75,7 @@ public class Main {
 
 
         System.out.println("\n\n\n");
-        set_de_carti.stream().sorted((a,b)->)
+        set_de_carti.stream().sorted((a,b)-> a.anul()-b.anul()).forEach(System.out::println);
 
     }
 }
